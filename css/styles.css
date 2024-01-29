@@ -31,7 +31,7 @@ address {
 
 .container {
     width: 100%;
-    max-width: 1158px;
+    max-width: 350px;
     margin: 0 auto;
     padding-left: 15px;
     padding-right: 15px;
@@ -296,8 +296,10 @@ border-radius: 2px;
 
 .team {
     background-color: #F4F4FD;
-    padding-top: 120px;
-    padding-bottom: 120px;
+    /* padding-top: 120px; */
+    padding-top: 96px;
+    /* padding-bottom: 120px; */
+    padding-bottom: 96px;
 }
 
 .team-title {
@@ -313,17 +315,21 @@ border-radius: 2px;
 
 .team-list {
     display: flex;
-    gap: 24px;
+    flex-wrap: wrap;
+    /* gap: 24px; */
+    gap: 72px;
 }
 
 .team-item {
-    width: calc((100% - 72px) / 4);
+    /* width: calc((100% - 72px) / 4); */
+    width: 100%;
     border-radius: 0px 0px 4px 4px;
     background: var(--WHITE, #FFF);
     box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 
 .team-img {
+    margin: 0 auto;
 }
 
 .team-inf {
@@ -391,8 +397,10 @@ margin-bottom: 32px;
 /* -------portfolio----------- */
 
 .portfolio {
-    padding-top: 120px;
-    padding-bottom: 120px;
+    /* padding-top: 120px; */
+    /* padding-bottom: 120px; */
+    padding-top: 96px;
+    padding-bottom: 96px;
 }
 
 .portfolio-title {
@@ -409,7 +417,8 @@ margin-bottom: 32px;
 .portfolio-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 48px 24px;
+    /* gap: 48px 24px; */
+    gap: 48px;
 }
 
 .portfolio-inf {
@@ -418,37 +427,10 @@ margin-bottom: 32px;
     border-top: none;
 }
 
-.portfolio-item:hover .portfolio-cover-text {
-    transform: translateY(0%);
-}
-
-.portfolio-cover-text {
-    color: var(--CLOUD, #F4F4FD);
-        font-size: 16px;
-        line-height: 1.5;
-        letter-spacing: 0.02em;
-    position: absolute;
-        top: 0;
-        background-color: #4D5AE5;
-        display: flex;
-        align-items: center;
-        padding: 40px 32px;
-        height: 100%;
-        width: 100%;
-        transform: translateY(100%);
-        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 .portfolio-item {
-    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    width: calc((100% - 48px) /3);
-    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.portfolio-item:hover {
-    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-        0px 1px 1px rgba(46, 47, 66, 0.16),
-        0px 2px 1px rgba(46, 47, 66, 0.08);
+    /* width: calc((100% - 48px) /3); */
+    width: 100%;
+    
 }
 
 .portfolio-content {
@@ -457,6 +439,10 @@ margin-bottom: 32px;
 }
 
 .portfolio-img {
+}
+
+.portfolio-cover-text {
+    display: none;
 }
 
 .portfolio-subtitle {
@@ -471,7 +457,6 @@ margin-bottom: 32px;
 .portfolio-text {
     color: var(--SLATE, #434455);
         font-size: 16px;
-        font-weight: 400;
         line-height: 1.5;
         letter-spacing: 0.02em;
 }
@@ -849,4 +834,90 @@ margin-bottom: 32px;
 border: none;
 fill: #F4F4FD;
 background-color: #404BBF;
+}
+
+
+/* -------tablet----------- */
+
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+
+    .team-list {
+        gap: 64px 24px;
+    }
+
+    .team-item {
+        width: calc((100% - 24px) / 2);
+    }
+    
+    .portfolio-list {
+        gap: 72px 24px;
+    }
+
+    .portfolio-item {
+        width: calc((100% - 24px) /2);
+    }
+}
+
+/* -------dasktop----------- */
+
+@media screen and (min-width: 1158px) {
+    .container {
+            max-width: 1158px;
+        }
+
+    .team {
+        padding-bottom: 120px;
+        padding-top: 120px;
+    }
+    .team-list {
+        gap: 24px;
+    }
+
+    .team-item {
+        width: calc((100% - 72px) / 4);
+    }
+
+    .portfolio {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+
+    .portfolio-list {
+        gap: 48px 24px;
+    }
+
+    .portfolio-item {
+        width: calc((100% - 48px) /3);
+        transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .portfolio-item:hover .portfolio-cover-text {
+        transform: translateY(0%);
+    }
+    
+    .portfolio-cover-text {
+        color: var(--CLOUD, #F4F4FD);
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        position: absolute;
+        top: 0;
+        background-color: #4D5AE5;
+        display: flex;
+        align-items: center;
+        padding: 40px 32px;
+        height: 100%;
+        width: 100%;
+        transform: translateY(100%);
+        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .portfolio-item:hover {
+        box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 2px 1px rgba(46, 47, 66, 0.08);
+    }
 }
